@@ -77,7 +77,7 @@ public class Main {
                 }
                 System.out.println("Your total bill =  ksh" + sum);
                 System.out.println("Thank you  " + student.getFirstName() + " " + student.getLastName());
-                break;
+                logic();
             case 2:
                 System.out.println("Here is your meal card");
                 Student.mealCard(student);
@@ -90,8 +90,8 @@ public class Main {
                 logic();
             case 4:
                 System.out.println("Your card balance is :");
-                double balance1 = balance - sum;
-                System.out.println("balance " + "ksh" + balance1);
+                 balance -=sum;
+                System.out.println("balance " + "ksh" + balance);
                 logic();
             case 5:
                 break;
