@@ -8,7 +8,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String gender;
-    private double balance;
+
 
     private static List<Student> studentsEnrolled = new ArrayList<>();
     public static List<Report> cafeReports = new ArrayList<>();
@@ -46,19 +46,12 @@ public class Student {
         this.gender = gender;
     }
 
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
     public static void enrollStudent(Student student) {
 
         studentsEnrolled.add(student);
     }
-    public static void mealCard(Student student){
+
+    public static void mealCard(Student student) {
         System.out.println("Name: " + student.firstName + " " + student.lastName);
         System.out.println("Gender: " + student.gender);
         System.out.println("Enrolled: Yes");

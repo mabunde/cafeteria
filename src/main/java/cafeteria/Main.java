@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Main {
     static Student student = new Student();
     static Scanner input = new Scanner(System.in);
+    static double sum = 0.00;
+    private static double balance = 1000.00;
 
 
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class Main {
         String gender = input.nextLine();
         student.setGender(gender);
 
-        Student student = new Student(firstName,lastName,gender);
+        Student student = new Student(firstName, lastName, gender);
         //enrolls a student
         Student.enrollStudent(student);
         welcome();
@@ -44,7 +46,6 @@ public class Main {
                         "Fried eggs    ", "Biscuits       ", "Quit          "};
                 double[] rates = new double[]{40.00, 50.00, 70.00, 150.00, 100.00, 20.00, 0};
                 int[] quantity = new int[7];
-                double sum = 0.00;
                 boolean quit = true;
 
                 do {
@@ -72,7 +73,6 @@ public class Main {
                     }
                 }
                 System.out.println("Your total bill =  ksh" + sum);
-
                 System.out.println("Thank you  " + student.getFirstName() + " " + student.getLastName());
                 break;
             case 2:
@@ -81,8 +81,15 @@ public class Main {
 
                 break;
             case 3:
+                System.out.println("Your card balance is :");
+                double balance1 = balance - sum;
+                System.out.println("balance " + "ksh" + balance1);
                 break;
             case 4:
+                System.out.println("Enter the amount to deposit");
+                double amount = input.nextDouble();
+                double currentBal = amount + balance;
+                System.out.println("Your cards balance :" + currentBal + "ksh");
                 break;
             case 5:
                 break;
