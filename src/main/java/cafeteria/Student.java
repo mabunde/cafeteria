@@ -13,7 +13,14 @@ public class Student {
     private static List<Student> studentsEnrolled = new ArrayList<>();
     public static List<Report> cafeReports = new ArrayList<>();
 
+    public Student() {
+    }
 
+    public Student(String firstName, String lastName, String gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -47,8 +54,15 @@ public class Student {
         this.balance = balance;
     }
 
-    public void enrollStudent(Student student) {
+    public static void enrollStudent(Student student) {
 
         studentsEnrolled.add(student);
+    }
+    public static void mealCard(Student student){
+        System.out.println("Name: " + student.firstName + " " + student.lastName);
+        System.out.println("Gender: " + student.gender);
+        System.out.println("Enrolled: Yes");
+
+        System.out.println("\n");
     }
 }

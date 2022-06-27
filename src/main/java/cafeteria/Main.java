@@ -20,6 +20,9 @@ public class Main {
         String gender = input.nextLine();
         student.setGender(gender);
 
+        Student student = new Student(firstName,lastName,gender);
+        //enrolls a student
+        Student.enrollStudent(student);
         welcome();
 
     }
@@ -29,9 +32,10 @@ public class Main {
                 "Welcome " + student.getFirstName() + " " + student.getLastName() + " to school cafeteria.");
         System.out.println("Select one of the options below\n" +
                 "1. Buy items\n" +
-                "2. Check your card balance\n" +
-                "3. Top up the card\n" +
-                "4. Quit"
+                "2. Print your meal card\n" +
+                "3. Check your card balance\n" +
+                "4. Top up the card\n" +
+                "5. Quit"
         );
         int choice = input.nextInt();
         switch (choice) {
@@ -67,18 +71,21 @@ public class Main {
                         System.out.println(items[i] + "*  " + quantity[i] + " == " + quantity[i] * rates[i] + "ksh");
                     }
                 }
-
                 System.out.println("Your total bill =  ksh" + sum);
 
                 System.out.println("Thank you  " + student.getFirstName() + " " + student.getLastName());
                 break;
             case 2:
+                System.out.println("Here is your meal card");
+                Student.mealCard(student);
+
                 break;
             case 3:
                 break;
             case 4:
                 break;
-
+            case 5:
+                break;
             default:
                 System.out.println("invalid option");
         }
