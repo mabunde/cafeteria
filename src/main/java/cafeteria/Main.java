@@ -10,6 +10,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        boolean ordering = true;
         System.out.println("Enter your first name");
         String firstName = input.nextLine();
         student.setFirstName(firstName);
@@ -26,17 +27,21 @@ public class Main {
         //enrolls a student
         Student.enrollStudent(student);
         welcome();
+        logic();
 
     }
 
-    public static void welcome() {
-        System.out.println("Enrollment successful\n" +
-                "Welcome " + student.getFirstName() + " " + student.getLastName() + " to school cafeteria.");
+
+        public static void welcome () {
+            System.out.println("Enrollment successful\n" +
+                    "Welcome " + student.getFirstName() + " " + student.getLastName() + " to school cafeteria.");
+        }
+        public static void logic(){
         System.out.println("Select one of the options below\n" +
                 "1. Buy items\n" +
                 "2. Print your meal card\n" +
-                "3. Check your card balance\n" +
-                "4. Top up the card\n" +
+                "3. Top up the card\n" +
+                "4. Check your card balance\n" +
                 "5. Quit"
         );
         int choice = input.nextInt();
@@ -60,9 +65,7 @@ public class Main {
                         quantity[option - 1] += q;
                     } else {
                         quit = false;
-
                     }
-
                 } while (quit);
 
                 System.out.println("Your Orders are:\n");
@@ -78,19 +81,18 @@ public class Main {
             case 2:
                 System.out.println("Here is your meal card");
                 Student.mealCard(student);
-
-                break;
+                logic();
             case 3:
-                System.out.println("Your card balance is :");
-                double balance1 = balance - sum;
-                System.out.println("balance " + "ksh" + balance1);
-                break;
-            case 4:
                 System.out.println("Enter the amount to deposit");
                 double amount = input.nextDouble();
                 double currentBal = amount + balance;
                 System.out.println("Your cards balance :" + currentBal + "ksh");
-                break;
+                logic();
+            case 4:
+                System.out.println("Your card balance is :");
+                double balance1 = balance - sum;
+                System.out.println("balance " + "ksh" + balance1);
+                logic();
             case 5:
                 break;
             default:
